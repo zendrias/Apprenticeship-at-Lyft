@@ -6,10 +6,12 @@ const app = express();
 app.use(express.json());
 
 // Router imports
-import indexRouter from './routers/index.js'
+import indexRouter from './routers/index.js';
+import testRouter from './routers/test.js';
 
 // Router configuration
-app.use('/', indexRouter)
+app.use('/', indexRouter);
+app.use('/test', testRouter);
 
 
 
@@ -22,4 +24,4 @@ const PORT = 3001;
 
 app.listen(PORT, () => (
   console.log(`Now listening on port ${3001}`)
-))
+));
