@@ -6,13 +6,14 @@ const app = express();
 app.use(express.json());
 
 // Router imports
-import indexRouter from './routers/index.js';
-import testRouter from './routers/test.js';
+import indexRouter from './routes/index.js';
+import testRouter from './routes/test.js';
 
 // Router configuration
 app.use('/', indexRouter);
 app.use('/test', testRouter);
-
+app.use('/api/test', testRouter);
+app.use('*', (req, res) => res.status(404).json({ status: 'Not Found' }))
 
 
 
