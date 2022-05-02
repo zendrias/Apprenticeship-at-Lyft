@@ -13,14 +13,9 @@ import testRouter from './routes/test.js';
 app.use('/', indexRouter);
 app.use('/test', testRouter);
 app.use('/api/test', testRouter);
-app.use('*', (req, res) => res.status(404).json({ status: 'Not Found' }))
-
-
-
-
+app.use('*', (req, res) => res.status(404).json({ status: 'Not Found' }));
 
 // Post Listener
-
 const PORT = 3001;
 
 app.listen(PORT, () => (
